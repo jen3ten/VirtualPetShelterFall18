@@ -12,6 +12,12 @@ namespace VirtualPetShelterFall18
         {
             bool playGame = true;
 
+            Manager manager = new Manager();
+            Volunteer volunteer = new Volunteer();
+            VirtualPet fluffball = new VirtualPet("FluffBall", "Fluffy kitty", 45, 49, 12);
+            VirtualPet fluffer = new VirtualPet("Fluffer", "Floppy bunny", 100, 78, 65);
+            VirtualPet fluffdog = new VirtualPet("FluffDog", "Doggie", 67, 92, 34);
+
             Console.WriteLine("** Welcome to the Fluffy Virtual Pet Shelter **");
             Console.WriteLine("** ...serving fluffy animals since 2002.     **");
             Console.WriteLine();

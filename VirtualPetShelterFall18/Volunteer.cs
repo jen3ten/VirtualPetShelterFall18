@@ -11,6 +11,11 @@ namespace VirtualPetShelterFall18
         public int Hours { get; set; } //volunteer work hours per week
         public string Specialty { get; set; } //volunteer specialty
 
+        public Volunteer(string name)
+        {
+            this.EmployeeName = name;
+        }
+
         public override void EnterWorkHours()
         {
             //Enter work hours for the week.  Work hours must not exceed maximum weekly hours

@@ -10,6 +10,11 @@ namespace VirtualPetShelterFall18
     {
         public int NumVolunteers { get; set; }  //The number of volunteers the Manager supervises
 
+        public Manager(string name)
+        {
+            this.EmployeeName = name;
+        }
+
         public override void EnterWorkHours()
         {
             //Can work more than 40 hours

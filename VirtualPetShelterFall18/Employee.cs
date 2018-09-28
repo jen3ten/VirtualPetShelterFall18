@@ -8,7 +8,7 @@ namespace VirtualPetShelterFall18
 {
     abstract class Employee //Base class with 2 abstract methods
     {
-        public int EmployeeName { get; set; }
+        public string EmployeeName { get; set; }
         public int WorkHours { get; set; }
 
         public abstract void EnterWorkHours();

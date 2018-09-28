@@ -8,10 +8,49 @@ namespace VirtualPetShelterFall18
 {
     class VirtualPet
     {
-        //name
-        //description
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int Hunger { get; set; }
+        public int Fatigue { get; set; }
+        public int Health { get; set; }
 
-        //constructor with name, description
-        //constructor with name, description, starting values for pet status
+        //Constructors
+        public VirtualPet()
+        {
+        }
+
+        public VirtualPet(string petName, string petDesc)
+        {
+            this.Name = petName;
+            this.Description = petDesc;
+        }
+
+        public VirtualPet(string petName, string petDesc, int petHunger, int petFatigue, int petHealth)
+        {
+            this.Name = petName;
+            this.Description = petDesc;
+            this.Hunger = petHunger;
+            this.Fatigue = petFatigue;
+            this.Health = petHealth;
+        }
+
+        //Methods
+        public void FeedMe()
+        {
+            this.Hunger = Hunger - 1;
+            this.Fatigue = Fatigue + 1;
+        }
+
+        public void ExerciseMe()
+        {
+            this.Hunger = Hunger + 1;
+            this.Health = Health + 1;
+        }
+
+        public void RestMe()
+        {
+            this.Fatigue = Fatigue - 1;
+            this.Health = Health + 1;
+        }
     }
 }
