@@ -13,6 +13,7 @@ namespace VirtualPetShelterFall18
         public Manager(string name)
         {
             this.EmployeeName = name;
+            VirtualPetShelter.employees.Add(name);
         }
 
         public override void EnterWorkHours()

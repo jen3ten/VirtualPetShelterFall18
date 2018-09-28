@@ -14,6 +14,7 @@ namespace VirtualPetShelterFall18
         public Volunteer(string name)
         {
             this.EmployeeName = name;
+            VirtualPetShelter.employees.Add(name);
         }
 
         public override void EnterWorkHours()

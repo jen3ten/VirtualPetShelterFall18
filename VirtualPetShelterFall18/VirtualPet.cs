@@ -23,6 +23,7 @@ namespace VirtualPetShelterFall18
         {
             this.Name = petName;
             this.Description = petDesc;
+            VirtualPetShelter.pets.Add(petName);
         }
 
         public VirtualPet(string petName, string petDesc, int petHunger, int petFatigue, int petHealth)
@@ -32,6 +33,7 @@ namespace VirtualPetShelterFall18
             this.Hunger = petHunger;
             this.Fatigue = petFatigue;
             this.Health = petHealth;
+            VirtualPetShelter.pets.Add(petName);
         }
 
         //Methods
