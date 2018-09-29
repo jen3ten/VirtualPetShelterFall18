@@ -62,7 +62,8 @@ namespace VirtualPetShelterFall18
                 Console.WriteLine("4. Feed pets");
                 Console.WriteLine("5. Water pets");
                 Console.WriteLine("6. Play with pets");
-                Console.WriteLine("7. Return to Main Menu");
+                Console.WriteLine("7. Rest the pets");
+                Console.WriteLine("8. Return to Main Menu");
                 switch (int.Parse(Console.ReadLine()))
                 {
                     case 1:
@@ -84,6 +85,9 @@ namespace VirtualPetShelterFall18
                         PlayPets();
                         break;
                     case 7:
+                        RestPets();
+                        break;
+                    case 8:
                         repeatQuestion = false;
                         break;
                     default:
@@ -133,27 +137,53 @@ namespace VirtualPetShelterFall18
         {
             Console.WriteLine();
             Console.WriteLine("Vounteer {0}, this is the status of your pets:", EmployeeName);
-            Console.WriteLine("Pet\t\tHunger\tThirst\tFatigue");
-            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("{0,-15}{1,10}{2,10}{3,10}", "Pet Name", "Hunger", "Fatigue", "Health");
+            Console.WriteLine("------------------------------------------------");
             foreach(VirtualPet pet in VirtualPetShelter.petsList)
             {
-                Console.WriteLine(pet.Name);
+                Console.WriteLine("{0,-15}{1,10}{2,10}{3,10}", pet.Name, pet.Hunger, pet.Fatigue, pet.Health);
             }
-        }
+        } //End of ViewStatus()
 
         public void FeedPets()
         {
-            //Do feed stuff here
-        }
+            foreach(VirtualPet pet in VirtualPetShelter.petsList)
+            {
+                pet.FeedMe();
+            }
+            Console.WriteLine("All pets have been fed!");
+            ViewStatus();
+        } //End of FeedPets()
 
         public void WaterPets()
         {
-            //Do water stuff here
-        }
+            foreach (VirtualPet pet in VirtualPetShelter.petsList)
+            {
+                pet.WaterMe();
+            }
+            Console.WriteLine("All pets have been given water!");
+            ViewStatus();
+        } //End of WaterPets()
 
         public void PlayPets()
         {
-            //Play with pet here
-        }
+            foreach (VirtualPet pet in VirtualPetShelter.petsList)
+            {
+                pet.ExerciseMe();
+            }
+            Console.WriteLine("All pets have been played with!");
+            ViewStatus();
+        } //End of PlayPets()
+
+        public void RestPets()
+        {
+            foreach (VirtualPet pet in VirtualPetShelter.petsList)
+            {
+                pet.RestMe();
+            }
+            Console.WriteLine("All pets are now resting!");
+            ViewStatus();
+        } //End of RestPets()
+
     }
 }

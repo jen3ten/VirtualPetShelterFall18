@@ -37,20 +37,26 @@ namespace VirtualPetShelterFall18
         //Methods
         public void FeedMe()
         {
-            this.Hunger = Hunger - 1;
+            this.Hunger = Hunger - 21;
             this.Fatigue = Fatigue + 1;
+        }
+
+        public void WaterMe()
+        {
+            this.Hunger = Hunger - 9;
         }
 
         public void ExerciseMe()
         {
-            this.Hunger = Hunger + 1;
-            this.Health = Health + 1;
+            this.Hunger = Hunger + 30;
+            this.Fatigue = Fatigue + 42;
+            this.Health = Health + 13;
         }
 
         public void RestMe()
         {
-            this.Fatigue = Fatigue - 1;
-            this.Health = Health + 1;
+            this.Fatigue = Fatigue - 50;
+            this.Health = Health + 15;
         }
     }
 }
