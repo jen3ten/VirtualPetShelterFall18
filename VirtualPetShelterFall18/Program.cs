@@ -18,20 +18,30 @@ namespace VirtualPetShelterFall18
 
             //Manually instantiate Manager objects and save in a list
             Manager managerJane = new Manager("Jane");
+            managerJane.NumVolunteers = 2;
             Manager managerDarren = new Manager("Darren");
+            managerDarren.NumVolunteers = 1;
             VirtualPetShelter.managersList.Add(managerJane);
             VirtualPetShelter.managersList.Add(managerDarren);
 
             //Manually instantiate Volunteer objects and save in a list
             Volunteer volunteerBilly = new Volunteer("Billy");
+            volunteerBilly.MaxHours = 20;
+            volunteerBilly.Specialty = "dogs";
             Volunteer volunteerSally = new Volunteer("Sally");
+            volunteerSally.MaxHours = 32;
+            volunteerSally.Specialty = "bunnies";
+            Volunteer volunteerEd = new Volunteer("Ed");
+            volunteerEd.MaxHours = 24;
+            volunteerEd.Specialty = "kittens";
             VirtualPetShelter.volunteersList.Add(volunteerBilly);
             VirtualPetShelter.volunteersList.Add(volunteerSally);
+            VirtualPetShelter.volunteersList.Add(volunteerEd);
 
             //Manually instantiate Pet objects and save in a list
             VirtualPet fluffball = new VirtualPet("FluffBall", "Fluffy kitty", 45, 49, 12);
             VirtualPet fluffer = new VirtualPet("Fluffer", "Floppy bunny", 100, 78, 65);
-            VirtualPet fluffdog = new VirtualPet("FluffDog", "Doggie", 67, 92, 34);
+            VirtualPet fluffdog = new VirtualPet("FluffDog", "Fun doggie", 67, 92, 34);
             VirtualPetShelter.petsList.Add(fluffball);
             VirtualPetShelter.petsList.Add(fluffer);
             VirtualPetShelter.petsList.Add(fluffdog);

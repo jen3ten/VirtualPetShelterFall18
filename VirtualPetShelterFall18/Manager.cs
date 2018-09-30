@@ -42,6 +42,9 @@ namespace VirtualPetShelterFall18
                 }
             } while (repeatQuestion);
 
+            Console.WriteLine("{0}, you supervise {1} volunteer(s).", 
+                    VirtualPetShelter.managersList[managerNum - 1].EmployeeName,
+                    VirtualPetShelter.managersList[managerNum - 1].NumVolunteers);
             return VirtualPetShelter.managersList[managerNum - 1];
         } //end of SelectManager()
 

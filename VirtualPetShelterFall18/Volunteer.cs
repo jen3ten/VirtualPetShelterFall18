@@ -9,7 +9,7 @@ namespace VirtualPetShelterFall18
     class Volunteer : Employee //Volunteer information derived from Employee
     {
         //Properties
-        public int Hours { get; set; } //volunteer work hours per week
+        public int MaxHours { get; set; } //maximum volunteer work hours per week
         public string Specialty { get; set; } //volunteer specialty
 
         //Constructors
@@ -32,7 +32,7 @@ namespace VirtualPetShelterFall18
                 Console.WriteLine("Which volunteer are you?");
                 foreach (Volunteer volunteer in VirtualPetShelter.volunteersList)
                 {
-                    Console.WriteLine("{0}. {1}", VirtualPetShelter.volunteersList.IndexOf(volunteer) + 1, volunteer.EmployeeName);
+                    Console.WriteLine("{0}. {1}, who specializes in {2}", VirtualPetShelter.volunteersList.IndexOf(volunteer) + 1, volunteer.EmployeeName, volunteer.Specialty);
                 }
 
                 volNum = int.Parse(Console.ReadLine());
@@ -110,7 +110,6 @@ namespace VirtualPetShelterFall18
         {
             //Enter work hours for the week.  Work hours must not exceed maximum weekly hours
             bool repeatQuestion;
-            int maxWeeklyHours = 20;
             int hours;
 
             Console.WriteLine();
@@ -120,9 +119,9 @@ namespace VirtualPetShelterFall18
                 repeatQuestion = false;
                 Console.Write("Please type your new work hours here: ");
                 hours = int.Parse(Console.ReadLine());
-                if(hours > maxWeeklyHours)
+                if(hours > MaxHours)
                 {
-                    Console.WriteLine("As a volunteer you may not work more than 20 hours in a week.");
+                    Console.WriteLine("{0}, you may not work more than {1} hours in a week.", EmployeeName, MaxHours);
                     repeatQuestion = true;
                 }
                 else
@@ -137,11 +136,11 @@ namespace VirtualPetShelterFall18
         {
             Console.WriteLine();
             Console.WriteLine("Vounteer {0}, this is the status of your pets:", EmployeeName);
-            Console.WriteLine("{0,-15}{1,10}{2,10}{3,10}", "Pet Name", "Hunger", "Fatigue", "Health");
-            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine("{0,-15}{1, -15}{2,10}{3,10}{4,10}", "Pet Name", "Description", "Hunger", "Fatigue", "Health");
+            Console.WriteLine("-----------------------------------------------------------------");
             foreach(VirtualPet pet in VirtualPetShelter.petsList)
             {
-                Console.WriteLine("{0,-15}{1,10}{2,10}{3,10}", pet.Name, pet.Hunger, pet.Fatigue, pet.Health);
+                Console.WriteLine("{0,-15}{1, -15}{2,10}{3,10}{4,10}", pet.Name, pet.Description, pet.Hunger, pet.Fatigue, pet.Health);
             }
         } //End of ViewStatus()
 
